@@ -1,9 +1,0 @@
-/home/d_a677356/work_work/Euler/netcore/EulerUtil/bin/Release/netstandard2.0/EulerUtil.deps.json
-/home/d_a677356/work_work/Euler/netcore/EulerUtil/bin/Release/netstandard2.0/EulerUtil.dll
-/home/d_a677356/work_work/Euler/netcore/EulerUtil/bin/Release/netstandard2.0/EulerUtil.pdb
-/home/d_a677356/work_work/Euler/netcore/EulerUtil/obj/Release/netstandard2.0/EulerUtil.csprojAssemblyReference.cache
-/home/d_a677356/work_work/Euler/netcore/EulerUtil/obj/Release/netstandard2.0/EulerUtil.csproj.CoreCompileInputs.cache
-/home/d_a677356/work_work/Euler/netcore/EulerUtil/obj/Release/netstandard2.0/EulerUtil.AssemblyInfoInputs.cache
-/home/d_a677356/work_work/Euler/netcore/EulerUtil/obj/Release/netstandard2.0/EulerUtil.AssemblyInfo.cs
-/home/d_a677356/work_work/Euler/netcore/EulerUtil/obj/Release/netstandard2.0/EulerUtil.dll
-/home/d_a677356/work_work/Euler/netcore/EulerUtil/obj/Release/netstandard2.0/EulerUtil.pdb

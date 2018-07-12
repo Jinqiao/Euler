@@ -39,3 +39,10 @@ msbuild.wrn
 
 # java
 target/
+
+# python
+__pycache__/
+
+# cs
+bin/
+obj/
