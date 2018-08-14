@@ -1,0 +1,4 @@
+1. add current dir to GOPATH
+export GOPATH="$HOME/work_work/Euler/go"
+
+2. use command "go run xxx.go" to run

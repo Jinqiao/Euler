@@ -1,0 +1,12 @@
+1. simple example
+   $ scala p31.scala 200
+
+2. above compiles each time called and will not output the compiled files in the
+   current directory
+   we can use scalac or fsc to compile
+   $ scalac p31.scala
+   $ fsc p31.scala
+
+   then use scala or java to run a compiled file
+   $ scala P31 200
+   $ java -cp /home/d_a677356/downloads/scala/scala-2.12.6/lib/*:. P31 200
