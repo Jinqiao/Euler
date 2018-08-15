@@ -14,14 +14,12 @@ namespace P32
             {
                 if (IsPandigitalProd(i))
                 {
-                    Console.WriteLine(i);
+                    // Console.WriteLine(i);
                     s += i;
                 }
             }
 
             Console.WriteLine(s);
-            
-            Console.ReadLine();
         }
 
         public static HashSet<List<int>> Subsets(List<int> factors)
@@ -69,7 +67,7 @@ namespace P32
                     continue;
                 if (new HashSet<char>(digitsStr).Count == 9)
                 {
-                    Console.WriteLine($"n1: {pair.Item1}, n2: {pair.Item2}");
+                    // Console.WriteLine($"n1: {pair.Item1}, n2: {pair.Item2}");
                     return true;
                 }
             }
