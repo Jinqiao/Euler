@@ -39,6 +39,7 @@ msbuild.wrn
 
 # java
 target/
+.class
 
 # python
 __pycache__/
