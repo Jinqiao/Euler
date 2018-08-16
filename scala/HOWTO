@@ -10,3 +10,9 @@
    then use scala or java to run a compiled file
    $ scala P31 200
    $ java -cp /home/d_a677356/downloads/scala/scala-2.12.6/lib/*:. P31 200
+
+3. if a program import another class/object, we compile it this way:
+   $ fsc ../utils/EulerUtils.scala P32.scala
+
+   this will create all the .class files
+   then we can run it either use scala or java same as above

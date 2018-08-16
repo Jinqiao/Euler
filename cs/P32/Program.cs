@@ -10,7 +10,7 @@ namespace P32
         public static void Main()
         {
             int s = 0;
-            for (int i = 0; i < 9999; i++)
+            for (int i = 1002; i < 9999; i++)
             {
                 if (IsPandigitalProd(i))
                 {
@@ -46,7 +46,8 @@ namespace P32
 
         public static HashSet<Tuple<int, int>> Split(int n)
         {
-            var n1List = Subsets(n.Factors()).Select(l => l.Aggregate((a, x) => a * x)).Distinct();
+            var n1List = Subsets(n.Factors())
+                .Select(l => l.Aggregate((a, x) => a * x)).Distinct();
             var result = new HashSet<Tuple<int, int>>();
             foreach (int n1 in n1List)
             {
