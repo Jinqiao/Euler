@@ -30,3 +30,14 @@ def getFactors(n):
     if n > 1:
         factors.append(n)
     return factors
+
+
+def getGcd(a, b):
+    a_factors = getFactors(a)
+    b_factors = getFactors(b)
+    gcd = 1
+    for i in a_factors:
+        if i in b_factors:
+            gcd = gcd * i
+            b_factors.remove(i)
+    return gcd

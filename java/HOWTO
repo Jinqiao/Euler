@@ -1,0 +1,4 @@
+Command below include all dependencies in classpath, then specify Main Class to run
+$ java -cp "P27/target/p27-1.0.jar:EulerUtil/target/euler-util-1.0.jar" P27
+
+TODO: Figure out how to create a jar with all the dependencies, and can be used with -jar

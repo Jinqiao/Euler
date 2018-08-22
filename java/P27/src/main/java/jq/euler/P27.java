@@ -25,5 +25,5 @@ public class P27 {
 			n++;
 		}
 		return n;
-	}	
+	}
 }

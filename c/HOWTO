@@ -1,0 +1,6 @@
+To compile, use gcc.
+$ gcc P27.c libEulerUtil.c -lm -o P27 -std=c99
+
+Above uses the math library libm.so, so we need -lm to link with it
+-o is used to specify output executable name
+-std=c99 is needed to use some new syntax
