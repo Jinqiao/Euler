@@ -41,3 +41,18 @@ def getGcd(a, b):
             gcd = gcd * i
             b_factors.remove(i)
     return gcd
+
+
+def getGcd2(a, b):
+    if b == 0:
+        return a
+    else:
+        return getGcd2(b, a % b)
+
+
+def isPandigital(n):
+    m = str(n)
+    s = set(m)
+    if "0" in s:
+        return False
+    return (len(s) == len(m) and int(max(s)) == len(s))
