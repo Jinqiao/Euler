@@ -14,7 +14,8 @@ def wordValue(w):
 
 
 def go():
-    with open('p042_words.txt', 'r') as f:
+    # elpy pwd is the proj root
+    with open('py/data/p042_words.txt', 'r') as f:
         data = f.read()
     n = 0
     for w in data.split(','):
