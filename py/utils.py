@@ -7,7 +7,7 @@ def isPrime(n):
     if n in __jq_primes:
         return True
     n = abs(n)
-    if n in [0, 1, 2, 3]:
+    if n in [2, 3, 5, 7]:
         return True
     i = 2
     ceil = math.sqrt(n)
@@ -17,6 +17,18 @@ def isPrime(n):
         i = i + 1
     __jq_primes.add(n)
     return True
+
+
+def primes_sieve(limit):
+    a = [True] * limit  # Initialize the primality list
+    a[0] = a[1] = False
+
+    for (i, isprime) in enumerate(a):
+        if isprime:
+            yield i
+            # for n in range(i * i, limit, i):
+            for n in range(i * i, limit, i * 2 if i > 2 else i):
+                a[n] = False
 
 
 def getFactors(n):
@@ -87,6 +99,7 @@ def nextPrime(n):
 #     if i >= 10:
 #         n = n + 1
 #     return n
+
 
 def numberOfDigits(i):
     return len(str(i))

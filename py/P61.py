@@ -1,36 +1,15 @@
-import numpy as np
 from itertools import permutations
 from itertools import combinations
 
 
-def f3(n):
-    return int(n * (n + 1) / 2)
-
-
-def f4(n):
-    return n * n
-
-
-def f5(n):
-    return int(n * (3 * n - 1) / 2)
-
-
-def f6(n):
-    return n * (2 * n - 1)
-
-
-def f7(n):
-    return int(n * (5 * n - 3) / 2)
-
-
-def f8(n):
-    return n * (3 * n - 2)
-
-
-fList = [f3, f4, f5, f6, f7, f8]
-tList = []
+fList = [lambda n:n * (n + 1) // 2,
+         lambda n:n * n,
+         lambda n:n * (3 * n - 1) // 2,
+         lambda n:n * (2 * n - 1),
+         lambda n:n * (5 * n - 3) // 2,
+         lambda n:n * (3 * n - 2)]
+tSet = set()
 nDict = dict()
-mDict = dict()
 
 
 def initDict():
@@ -51,51 +30,48 @@ def canLink(a, b):
     return str(a)[-2:] == str(b)[:2]
 
 
-def getLinkMatrices():
+def getAllLinks():
     for x, y in permutations(range(6), 2):
         l1 = nDict[x]
         l2 = nDict[y]
         len1 = len(l1)
         len2 = len(l2)
-        m = np.full((len1, len2), False)
         for i in range(len1):
             for j in range(len2):
-                m[i, j] = canLink(l1[i], l2[j])
-                if m[i, j]:
-                    tList.append((l1[i], l2[j]))
-        mDict[(x, y)] = m
+                if canLink(l1[i], l2[j]):
+                    tSet.add((l1[i], l2[j]))
 
 
 initDict()
-getLinkMatrices()
+getAllLinks()
 
 # for k, v in nDict.items():
 #     print(f'k: {k}, len: {len(v)}')
 
-tSet2 = set([(t1, t2) for t1, t2 in permutations(tList, 2)
+tSet2 = set([(t1, t2) for t1, t2 in permutations(tSet, 2)
              if t1[1] == t2[0] and t1[0] != t2[1]])
 
 tSet3 = set()
 for t1, t2 in tSet2:
-    for t3 in tList:
+    for t3 in tSet:
         if t2[1] == t3[0] and t1[0] != t3[1]:
             tSet3.add((t1, t2, t3))
 
 tSet4 = set()
 for t1, t2, t3 in tSet3:
-    for t4 in tList:
+    for t4 in tSet:
         if t3[1] == t4[0] and t1[0] != t4[1]:
             tSet4.add((t1, t2, t3, t4))
 
 tSet5 = set()
 for t1, t2, t3, t4 in tSet4:
-    for t5 in tList:
+    for t5 in tSet:
         if t4[1] == t5[0] and t1[0] != t5[1]:
             tSet5.add((t1, t2, t3, t4, t5))
 
 tSet6 = set()
 for t1, t2, t3, t4, t5 in tSet5:
-    for t6 in tList:
+    for t6 in tSet:
         if t5[1] == t6[0] and t1[0] == t6[1]:
             tSet6.add((t1, t2, t3, t4, t5, t6))
 
@@ -126,4 +102,5 @@ for seqK, seq in seqDict.items():
                              if l1 == l2]) == 0:
         seqDict2[seqK] = L
 
+print(list(seqDict2.keys())[0])
 print(sum(list(seqDict2.keys())[0]))
