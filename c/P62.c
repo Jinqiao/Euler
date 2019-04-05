@@ -22,19 +22,17 @@ int main()
     sprintf(k, "%ld", c);
     qsort(k, strlen(k), sizeof(char), comp);
 
-
-
     list = g_hash_table_lookup(hash, k);
     if(list == NULL){
       g_hash_table_insert(hash, k, g_slist_append(NULL, GINT_TO_POINTER(c)));
     }
     else{
       list =g_slist_append(list, GINT_TO_POINTER(c));
+          if (g_slist_length(list) >= 5) {
+            break;
+          }
     }
 
-    if (g_slist_length(list) >= 5) {
-      break;
-    }
   }
 
   GSList *iter = NULL;
