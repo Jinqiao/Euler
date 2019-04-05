@@ -9,7 +9,7 @@ int comp(const void *a,const void *b) {
   return *x - *y;
 }
 
-int main(int argc, char *argv[])
+int main()
 {
   long i = 0, c = 0;
   char k[30];
@@ -24,24 +24,20 @@ int main(int argc, char *argv[])
 
     list = g_hash_table_lookup(hash, k);
     if(list == NULL){
-      g_hash_table_insert(hash, k, g_slist_prepend(NULL, GINT_TO_POINTER(c)));
+      g_hash_table_insert(hash, k, g_slist_append(NULL, GINT_TO_POINTER(c)));
     }
     else{
-      list = g_slist_prepend(list, GINT_TO_POINTER(c));
+      list =g_slist_append(list, GINT_TO_POINTER(c));
     }
 
-    if(i == 5027){
-      printf("k: %s, c: %ld, l: %d\n", k, c, g_slist_length(list));
-    }
-
-    if (g_slist_length(list) >= 3 || i > 5030) {
+    if (g_slist_length(list) >= 5) {
       break;
     }
   }
 
   GSList *iter = NULL;
   for (iter = list; iter; iter = iter -> next) {
-    printf("k: %s, %ld\n", k, (long)iter -> data);
+    printf("k: %s, c: %ld\n", k, (long)iter -> data);
   }
 
   return 0;
