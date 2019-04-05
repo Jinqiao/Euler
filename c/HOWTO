@@ -4,3 +4,6 @@ $ gcc P27.c libEulerUtil.c -lm -o P27 -std=c99
 Above uses the math library libm.so, so we need -lm to link with it
 -o is used to specify output executable name
 -std=c99 is needed to use some new syntax
+
+If using glib, we can use pkg-config to generate params:
+$ gcc `pkg-config --cflags --libs glib-2.0` -o P62 P62.c

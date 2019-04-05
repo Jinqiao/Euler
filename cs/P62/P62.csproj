@@ -5,10 +5,4 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Reference Include="EulerUtil">
-      <HintPath>..\EulerUtil\bin\Debug\netstandard2.0\EulerUtil.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>

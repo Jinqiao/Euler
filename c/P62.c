@@ -22,6 +22,8 @@ int main()
     sprintf(k, "%ld", c);
     qsort(k, strlen(k), sizeof(char), comp);
 
+
+
     list = g_hash_table_lookup(hash, k);
     if(list == NULL){
       g_hash_table_insert(hash, k, g_slist_append(NULL, GINT_TO_POINTER(c)));
